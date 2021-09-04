@@ -27,7 +27,7 @@
     <body>
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-green" id="mainNav">
 
             <div class="container px-4 px-lg-5">
 
@@ -55,7 +55,7 @@
         </nav>
 
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('{{ asset('public-theme/assets/img/thpt-home-bg.jpg') }}')">
+        <header class="masthead" style="background-image: url('{{ asset('public-theme/assets/img/thpt-home-bg.jpg') }}'); height: 1250px;">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-8">
