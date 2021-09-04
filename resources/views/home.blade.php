@@ -19,7 +19,8 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
 
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ asset('public-theme/css/styles.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('public-theme/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
 
     </head>
 
@@ -70,25 +71,63 @@
         <!-- Main Content-->
         <div class="container px-4 px-lg-5">
 
-            <div class="row gx-4 gx-lg-5 justify-content-center">
+            {{-- About Links --}}
+            <div class="row ">
 
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                {{-- Hotel Investment --}}
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
 
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2021
-                        </p>
+                    <div class="card text-center">
+
+                        <div class="mx-auto mt-3 bg-secondary w-100 py-2">
+                            <img class="card-img-top rounded-circle border" src="public-theme/assets/img/investment-icon.png" style="max-height: 80px; max-width: 80px;">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Hotel Investment</h5>
+                            <p class="card-text">Working with institutions, sovereign funds and high net worth individuals who wish to acquire, hold or dispose of investments in hotel property.</p>
+                            <a href="#" class="btn btn-primary">Read more...</a>
+                        </div>
                     </div>
 
                 </div>
 
+                {{-- Hotel Operations --}}
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="card text-center">
+
+                        <div class="mx-auto mt-3 bg-secondary w-100 py-2">
+                            <img class="card-img-top rounded-circle border" src="public-theme/assets/img/building-icon.png" style="max-height: 80px; max-width: 80px;">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Hotel Operations</h5>
+                            <p class="card-text">Acting on behalf of hotel operating companies who are seeking investment or wish to transact hotel real estate.</p>
+                            <a href="#" class="btn btn-primary">Read more...</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                {{-- Hotel Development --}}
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="card text-center">
+
+                        <div class="mx-auto mt-3 bg-secondary w-100 py-2">
+                            <img class="card-img-top rounded-circle border" src="public-theme/assets/img/development-icon-2.png" style="max-height: 80px; max-width: 80px;">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Hotel Investment</h5>
+                            <p class="card-text">Supporting investors, operators or developers who wish to develop individual assets, mixed use schemes, or obtain change of use to maximise yields.</p>
+                            <a href="#" class="btn btn-primary">Read more...</a>
+                        </div>
+                    </div>
+
+                </div>
+                
             </div>
 
         </div>
