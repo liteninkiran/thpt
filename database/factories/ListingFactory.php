@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\Listing;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -33,6 +34,9 @@ class ListingFactory extends Factory
         $rnd = $this->faker->numberBetween(1, 100);
         $owner = $rnd <= 50 ? $this->faker->company() : $this->faker->name();
 
+        // Created By
+        $user = User::inRandomOrder()->first();
+
         return [
             'title' => $this->faker->realText(150, 5),
             'location' => $this->faker->country(),
@@ -46,6 +50,8 @@ class ListingFactory extends Factory
             'tenure' => 'Freehold',
             'date_posted' => $this->faker->dateTime(),
             'comment' => $this->faker->realText(1000, 3),
+            'created_by' => $user->id,
+            'updated_by' => $user->id,
             'deleted_at' => $rnd <= 85 ? null : $this->faker->dateTime(),
         ];
     }

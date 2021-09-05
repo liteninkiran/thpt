@@ -14,7 +14,6 @@ class ListingSeeder extends Seeder
      */
     public function run()
     {
-        Listing::truncate();
         Listing::factory(100)->create();
     }
 }

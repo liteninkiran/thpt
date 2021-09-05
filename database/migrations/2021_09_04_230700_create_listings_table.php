@@ -29,6 +29,8 @@ class CreateListingsTable extends Migration
             $table->string('tenure');
             $table->date('date_posted');
             $table->text('comment');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by');
             $table->timestamps();
             $table->softDeletes();
         });
