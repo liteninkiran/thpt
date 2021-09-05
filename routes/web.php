@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListingController;
 
@@ -17,9 +18,7 @@ use App\Http\Controllers\ListingController;
 
 Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [AdminController::class, 'home'])->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 

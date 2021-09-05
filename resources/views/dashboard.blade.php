@@ -77,8 +77,8 @@
                                     {{-- Metric --}}
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                                         <div class="card-content">
-                                            <h5 class="font-15">Posts:</h5>
-                                            <h2 class="mb-3 font-18">0</h2>
+                                            <h5 class="font-15">Listings:</h5>
+                                            <h2 class="mb-3 font-18">{{ $listingCount }}</h2>
                                         </div>
                                     </div>
 
