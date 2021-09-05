@@ -16,7 +16,7 @@ use App\Http\Controllers\ListingController;
 |
 */
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/dashboard', [AdminController::class, 'home'])->middleware(['auth'])->name('dashboard');
 
