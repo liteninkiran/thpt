@@ -95,6 +95,8 @@ class ListingController extends Controller
      */
     public function destroy(Listing $listing)
     {
-        //
+        $listing->delete();
+        // session()->flash('message', 'Post ' . $post->title . ' trashed successfully');
+        return redirect('admin/listings/index');
     }
 }

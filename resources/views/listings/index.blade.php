@@ -73,8 +73,8 @@
 
                                             {{-- Header Row --}}
                                             <tr>
+                                                <th>Name</th>
                                                 <th>Title</th>
-                                                <th>Description</th>
                                                 <th>Posted By</th>
                                                 <th>Date Posted</th>
                                             </tr>
@@ -93,17 +93,10 @@
                                                     </td>
 
                                                     {{-- Title --}}
-                                                    <td>{!! $listing->title !!}
-                                                        <div class="table-links">
-                                                            <a href="{{ route('admin.listings.edit', $listing->id) }}">Edit</a><div class="bullet"></div>
-                                                            <a href="{{ route('admin.listings.destroy', $listing->id) }}">Trash</a>
-                                                        </div>
-                                                    </td>
+                                                    <td>{!! $listing->title !!}</td>
 
                                                     {{-- Posted By --}}
-                                                    <th>
-                                                        <img alt="image" src="{{ $listing->create_user->getGravatarAttribute() }}" class="user-img-radious-style" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="top" title="{{ $listing->create_user->name }}">
-                                                    </th>
+                                                    <td><img alt="image" src="{{ $listing->create_user->getGravatarAttribute() }}" class="user-img-radious-style" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="top" title="{{ $listing->create_user->name }}"></td>
 
                                                     {{-- Date Posted --}}
                                                     <td>{{ $listing->date_posted->diffForHumans() }}</td>
