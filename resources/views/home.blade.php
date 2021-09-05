@@ -71,7 +71,7 @@
         <!-- Main Content-->
         <div class="container px-4 px-lg-5">
 
-            {{-- About Links --}}
+            {{-- About #1 --}}
             <div class="row">
 
                 {{-- Hotel Investment --}}
@@ -130,18 +130,85 @@
                 
             </div>
 
-            <div class="row mt-5 text-center">
+            <div style="height: 200px;"></div>
+
+            {{-- Contact Us --}}
+            <div class="mt-5">
+
+                <div class="row">
+
+                    <div class="col-xl-6 col-lg-12">
+                        <img src="public-theme/assets/img/hotel-1.jpg">
+                    </div>
+
+                    <div class="col-xl-6 col-lg-12">
+                        <p style="font-size:36px; line-height: 1.5em; font-weight: 500; color: #333;" class="mt-0">A Small Group Of Highly Experienced Business Professionals</p>
+                        <p style="font-size: 20px; line-height: 2em;">We would welcome the opportunity to engage with you, and to explore how together we may be able to assist you in achieving your objectives in this very specialist area of the real estate market.</p>
+                        <a href="#" class="btn btn-primary">Contact Us</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div style="height: 200px;"></div>
+
+            {{-- About #2 --}}
+            <div class="mt-5">
+
+                <div class="row">
+
+                    <div class="col-xl-7 col-lg-12">
+                        <p style="font-size:36px; line-height: 1.5em; font-weight: 500; color: #333;" class="mt-0">Developing Bespoke Opportunities</p>
+                        <p style="font-size: 20px; line-height: 2em;">Our service can explore opportunities and create a suitable strategy. On top of this we can offer ongoing services for holding on to assets and developing them. We provide a range of skills and experience which is directly relevant to those involved in the hotel property market.</p>
+                        <a href="#" class="btn btn-primary">Find Out More</a>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-12">
+                        <img src="public-theme/assets/img/fernando-alvarez-rodriguez.jpg" class="w-100">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div style="height: 150px;"></div>
+            <hr>
+            <div style="height: 150px;"></div>
+
+            {{-- Recent Listings --}}
+
+            {{-- Header --}}
+            <div class="row text-center">
                 <div class="col-xl-6 col-lg-12 mx-auto">
                     <h1>Recent Listings</h1>
                 </div>
             </div>
 
+            {{-- Blurb --}}
             <div class="row mt-2 text-center">
                 <div class="col-xl-6 col-lg-12 mx-auto">
                     <p class="lead">We have an extensive portfolio of hotel property available. Please <a href="#">Contact Us</a> if you are wishing to discuss any of the listings.</p>
                 </div>
             </div>
 
+            {{-- Search --}}
+            <div class="row">
+                <form action="">
+                    <div class="col-xl-6 col-lg-12 mx-auto">
+                        <input type="search" id="form1" class="form-control w-50 d-inline" placeholder="Search by city" style="margin-left: 112px;">
+
+                        <button type="button" class="btn btn-primary py-2" style="margin-top: -4px">
+                            <i class="fas fa-search"></i>
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+
+            <div style="height: 100px;"></div>
+
+            {{-- Listing Cards --}}
             <div class="row my-2 text-center">
 
                 @if ($listings->count() > 0)
