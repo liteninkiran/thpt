@@ -107,4 +107,11 @@ class ListingController extends Controller
         return redirect()->route('admin.listings.trashed');
     }
 
+    public function remove($id) {
+        $listing = Listing::onlyTrashed()->find($id);
+        $title = $listing->title;
+        $listing->forceDelete();
+        session()->flash('message', 'Listing ' . $title . ' deleted successfully');
+        return redirect()->route('admin.listings.trashed');
+    }
 }
