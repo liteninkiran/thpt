@@ -96,7 +96,15 @@ class ListingController extends Controller
     public function destroy(Listing $listing)
     {
         $listing->delete();
-        // session()->flash('message', 'Post ' . $post->title . ' trashed successfully');
+        session()->flash('message', 'Listing ' . $post->title . ' trashed successfully');
         return redirect('admin/listings/index');
     }
+
+    public function undelete($id) {
+        $listing = Listing::onlyTrashed()->find($id);
+        $listing->restore();
+        session()->flash('message', 'Listing ' . $listing->title . ' restored successfully');
+        return redirect()->route('admin.listings.trashed');
+    }
+
 }
