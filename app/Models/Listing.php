@@ -9,4 +9,11 @@ use Illuminate\Database\Eloquent\softDeletes;
 class Listing extends Model
 {
     use HasFactory, softDeletes;
+
+    protected $dates = [
+        'date_posted',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 }

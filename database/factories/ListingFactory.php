@@ -48,7 +48,7 @@ class ListingFactory extends Factory
             'flag_management' => 'Free to new owner',
             'financials' => 'Full details available upon LOI/EOI',
             'tenure' => 'Freehold',
-            'date_posted' => $this->faker->dateTime(),
+            'date_posted' => $this->faker->dateTimeBetween('-2 years', 'now'),
             'comment' => $this->faker->realText(1000, 3),
             'created_by' => $user->id,
             'updated_by' => $user->id,

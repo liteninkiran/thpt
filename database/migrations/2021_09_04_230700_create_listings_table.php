@@ -27,11 +27,12 @@ class CreateListingsTable extends Migration
             $table->string('flag_management');
             $table->string('financials');
             $table->string('tenure');
-            $table->date('date_posted');
+            $table->timestamp('date_posted')->useCurrent();
             $table->text('comment');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();;
             $table->softDeletes();
         });
     }

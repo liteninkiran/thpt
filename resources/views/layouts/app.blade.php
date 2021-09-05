@@ -15,9 +15,25 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <!-- General CSS Files -->
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/app.min.css') }}">
+
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/components.css') }}">
+
+        <!-- Custom style CSS -->
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/custom.css') }}">
+        <link rel='shortcut icon' type='image/x-icon' href="{{ asset('admin/assets/img/favicon.ico') }}" />
+        <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
     </head>
+
     <body class="font-sans antialiased">
+
         <div class="min-h-screen bg-gray-100">
+
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -31,6 +47,21 @@
             <main>
                 {{ $slot }}
             </main>
+
         </div>
+
+
+        <!-- General JS Scripts -->
+        <script src="{{ asset('admin/assets/js/app.min.js') }}"></script>
+        <!-- JS Libraies -->
+        <script src="{{ asset('admin/assets/bundles/apexcharts/apexcharts.min.js') }}"></script>
+        <!-- Page Specific JS File -->
+        <script src="{{ asset('admin/assets/js/page/index.js') }}"></script>
+        <!-- Template JS File -->
+        <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
+        <!-- Custom JS File -->
+        <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+
     </body>
+
 </html>
