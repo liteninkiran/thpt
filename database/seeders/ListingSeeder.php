@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Listing;
 
 class ListingSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class ListingSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Listing::truncate();
+        Listing::factory(100)->create();
     }
 }
