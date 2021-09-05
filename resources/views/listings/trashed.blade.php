@@ -20,8 +20,8 @@
                             <div class="card-body">
 
                                 <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link active" href="">All <span class="badge badge-white">{{ $listings->total() }}</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.listings.trashed') }}">Trash <span class="badge badge-primary">{{ $count }}</span></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.listings.index') }}">All <span class="badge badge-white">{{ $count }}</span></a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="">Trash <span class="badge badge-primary">{{ $listings->total() }}</span></a></li>
                                 </ul>
 
                             </div>

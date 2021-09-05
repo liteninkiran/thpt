@@ -15,9 +15,21 @@ class ListingController extends Controller
     public function index()
     {
         $listings = Listing::paginate(10);
-        $trashed = Listing::onlyTrashed()->get();
+        $count = Listing::onlyTrashed()->count();
 
-        return view('listings.index', compact('listings', 'trashed'));
+        return view('listings.index', compact('listings', 'count'));
+    }
+
+    /**
+     * Display a listing of the soft deleted resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function trashed()
+    {
+        $listings = Listing::onlyTrashed()->paginate(10);
+        $count = Listing::count();
+        return view('listings.trashed', compact('listings', 'count'));
     }
 
     /**

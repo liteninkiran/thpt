@@ -12,13 +12,25 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
+                    {{-- Dashboard --}}
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    {{-- Listings --}}
                     <x-nav-link :href="route('admin.listings.index')" :active="request()->routeIs('admin.listings.index')">
                         Listings
                     </x-nav-link>
+
+                    {{-- Users --}}
+{{-- 
+                    <x-nav-link :href="route('admin.listings.index')" :active="request()->routeIs('admin.listings.index')">
+                        Users
+                    </x-nav-link>
+ --}}
                 </div>
+
             </div>
 
             <!-- Settings Dropdown -->
