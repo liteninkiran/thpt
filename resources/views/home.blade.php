@@ -72,7 +72,7 @@
         <div class="container px-4 px-lg-5">
 
             {{-- About Links --}}
-            <div class="row ">
+            <div class="row">
 
                 {{-- Hotel Investment --}}
                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -93,7 +93,7 @@
                 </div>
 
                 {{-- Hotel Operations --}}
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 d-flex">
 
                     <div class="card text-center">
 
@@ -104,14 +104,14 @@
                         <div class="card-body">
                             <h5 class="card-title text-uppercase">Hotel Operations</h5>
                             <p class="card-text">Acting on behalf of hotel operating companies who are seeking investment or wish to transact hotel real estate.</p>
-                            <a href="#" class="btn btn-primary">Read more...</a>
+                            <a href="#" class="btn btn-primary ">Read more...</a>
                         </div>
                     </div>
 
                 </div>
 
                 {{-- Hotel Development --}}
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 d-flex">
 
                     <div class="card text-center">
 
@@ -128,6 +128,59 @@
 
                 </div>
                 
+            </div>
+
+            <div class="row mt-5 text-center">
+                <div class="col-xl-6 col-lg-12 mx-auto">
+                    <h1>Recent Listings</h1>
+                </div>
+            </div>
+
+            <div class="row mt-2 text-center">
+                <div class="col-xl-6 col-lg-12 mx-auto">
+                    <p class="lead">We have an extensive portfolio of hotel property available. Please <a href="#">Contact Us</a> if you are wishing to discuss any of the listings.</p>
+                </div>
+            </div>
+
+            <div class="row my-2 text-center">
+
+                @if ($listings->count() > 0)
+
+                    <div class="row">
+
+                        @foreach ($listings as $listing)
+
+                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+
+                                <div class="card text-center">
+
+                                    <div class="mx-auto mt-3 bg-secondary w-100 py-2">
+                                        <img class="card-img-top border" src="{{ $listing->cover_image }}" style="max-height: 80px; max-width: 80px;">
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase">{{ $listing->title }}</h5>
+                                        <p class="card-text">{!! Str::limit($listing->opportunity, 200) !!}</p>
+                                        <a href="#">Read more...</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        @endforeach
+
+                    </div>
+
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary mb-5">View All Listings</a>
+                    </div>
+
+                @else
+
+                    <h1>No listings found</h1>
+
+                @endif
+
             </div>
 
         </div>
