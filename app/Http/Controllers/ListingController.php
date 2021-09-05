@@ -14,7 +14,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::latest()->paginate(10);
+        $listings = Listing::paginate(10);
         $trashed = Listing::onlyTrashed()->get();
 
         return view('listings.index', compact('listings', 'trashed'));
