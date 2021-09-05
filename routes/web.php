@@ -22,20 +22,22 @@ Route::get('/dashboard', [AdminController::class, 'home'])->middleware(['auth'])
 
 require __DIR__.'/auth.php';
 
-// Post routes
+// Admin routes
 Route::prefix('admin')->group(function () {
     Route::name('admin.')->group(function () {
+        Route::group(['middleware' => 'auth'], function () {
 
-        Route::get('/listings/index', [ListingController::class, 'index'])->name('listings.index');
-        Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
-        Route::post('/listings/store', [ListingController::class, 'store'])->name('listings.store');
-        Route::get('/listings/{id}/edit', [ListingController::class, 'edit'])->name('listings.edit');
-        Route::post('/listings/{id}/update', [ListingController::class, 'update'])->name('listings.update');
-        Route::get('/listings/{id}/destroy', [ListingController::class, 'destroy'])->name('listings.destroy');
-        Route::get('/listings/trashed', [ListingController::class, 'trashed'])->name('listings.trashed');
-        Route::get('/listings/{id}/undelete', [ListingController::class, 'undelete'])->name('listings.undelete');
-        Route::get('/listings/{id}/remove', [ListingController::class, 'remove'])->name('listings.remove');
-        Route::post('/listings/search', [ListingController::class, 'search'])->name('listings.search');
+            // Listings
+            Route::get('/listings/index', [ListingController::class, 'index'])->name('listings.index');
+            Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
+            Route::post('/listings/store', [ListingController::class, 'store'])->name('listings.store');
+            Route::get('/listings/{id}/edit', [ListingController::class, 'edit'])->name('listings.edit');
+            Route::post('/listings/{id}/update', [ListingController::class, 'update'])->name('listings.update');
+            Route::get('/listings/{id}/destroy', [ListingController::class, 'destroy'])->name('listings.destroy');
+            Route::get('/listings/trashed', [ListingController::class, 'trashed'])->name('listings.trashed');
+            Route::get('/listings/{id}/undelete', [ListingController::class, 'undelete'])->name('listings.undelete');
+            Route::get('/listings/{id}/remove', [ListingController::class, 'remove'])->name('listings.remove');
+            Route::post('/listings/search', [ListingController::class, 'search'])->name('listings.search');
+        });
     });
 });
-
