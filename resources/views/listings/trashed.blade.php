@@ -76,7 +76,7 @@
                                                 <th>Name</th>
                                                 <th>Title</th>
                                                 <th>Posted By</th>
-                                                <th>Date Posted</th>
+                                                <th>Date Trashed</th>
                                             </tr>
 
                                             {{-- Data --}}
@@ -98,8 +98,8 @@
                                                     {{-- Posted By --}}
                                                     <td><img alt="image" src="{{ $listing->create_user->getGravatarAttribute() }}" class="user-img-radious-style" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="top" title="{{ $listing->create_user->name }}"></td>
 
-                                                    {{-- Date Posted --}}
-                                                    <td>{{ $listing->date_posted->diffForHumans() }}</td>
+                                                    {{-- Date Trashed --}}
+                                                    <td>{{ $listing->deleted_at->diffForHumans() }}</td>
 
                                                 </tr>
 

@@ -14,7 +14,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::paginate(10);
+        $listings = Listing::orderBy('date_posted', 'DESC')->paginate(10);
         $count = Listing::onlyTrashed()->count();
 
         return view('listings.index', compact('listings', 'count'));
@@ -27,7 +27,7 @@ class ListingController extends Controller
      */
     public function trashed()
     {
-        $listings = Listing::onlyTrashed()->paginate(10);
+        $listings = Listing::onlyTrashed()->orderBy('deleted_at', 'DESC')->paginate(10);
         $count = Listing::count();
         return view('listings.trashed', compact('listings', 'count'));
     }
@@ -50,7 +50,32 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->validate(Listing::$validationRules, Listing::$messages)) {
+
+            $imageName = null;
+
+            // Upload image
+            if ($request->has('cover_image')) {
+                $image = $request->cover_image;
+                $path = 'storage/listings/';
+                $imageName = $this->uploadImage($image, $path);
+            }
+
+            $newRequest = array_merge($request->all(), [
+                'created_by' => auth()->user()->id,
+                'updated_by' => auth()->user()->id,
+            ]);
+
+            $listing = Listing::create($newRequest);
+
+            $listing->cover_image = $imageName;
+
+            $listing->save();
+
+            session()->flash('message', 'Listing created successfully');
+
+            return redirect('admin/listings/index');
+        }
     }
 
     /**
@@ -84,7 +109,30 @@ class ListingController extends Controller
      */
     public function update(Request $request, Listing $listing)
     {
-        //
+        $imageName = $listing->cover_image;
+
+        if ($request->validate(Listing::$validationRules, Listing::$messages)) {
+
+            // Upload image
+            if ($request->has('cover_image')) {
+                $image = $request->cover_image;
+                $path = 'storage/listings/';
+                $imageName = $this->uploadImage($image, $path);
+            }
+
+            $newRequest = array_merge($request->all(), [
+                'updated_by' => auth()->user()->id,
+            ]);
+
+            $listing->update($newRequest);
+            $listing->cover_image = $imageName;
+
+            $listing->save();
+
+            session()->flash('message', 'Listing updated successfully');
+
+            return redirect('admin/listings/index');
+        }
     }
 
     /**

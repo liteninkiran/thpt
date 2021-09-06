@@ -36,7 +36,7 @@
                 {{-- Messages --}}
                 <div class="row mt-4">
                     <div class="col-12">
-                        {{-- @include('includes.messages') --}}
+                        @include('includes.messages')
                     </div>
                 </div>
 
