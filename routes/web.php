@@ -31,7 +31,7 @@ Route::prefix('admin')->group(function () {
             Route::get ('/listings/index', [ListingController::class, 'index'])->name('listings.index');
             Route::get ('/listings/create', [ListingController::class, 'create'])->name('listings.create');
             Route::post('/listings/store', [ListingController::class, 'store'])->name('listings.store');
-            Route::get ('/listings/{id}/edit', [ListingController::class, 'edit'])->name('listings.edit');
+            Route::get ('/listings/{listing}/edit', [ListingController::class, 'edit'])->name('listings.edit');
             Route::post('/listings/{id}/update', [ListingController::class, 'update'])->name('listings.update');
             Route::get ('/listings/{listing}/destroy', [ListingController::class, 'destroy'])->name('listings.destroy');
             Route::get ('/listings/{id}/undelete', [ListingController::class, 'undelete'])->name('listings.undelete');

@@ -22,6 +22,7 @@
                                 <ul class="nav nav-pills">
                                     <li class="nav-item"><a class="nav-link active" href="">All <span class="badge badge-white">{{ $listings->total() }}</span></a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.listings.trashed') }}">Trash <span class="badge badge-primary">{{ $count }}</span></a></li>
+                                    <li class="nav-item ml-auto"><a href="{{ route('admin.listings.create') }}" class="btn btn-primary h-11 pt-2">CREATE</a></li>
                                 </ul>
 
                             </div>

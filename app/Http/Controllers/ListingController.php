@@ -39,7 +39,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return view('listings.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class ListingController extends Controller
      */
     public function edit(Listing $listing)
     {
-        //
+        return view('listings.edit', compact('listing'));
     }
 
     /**
